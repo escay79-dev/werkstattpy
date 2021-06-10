@@ -1,0 +1,66 @@
+WHats needed: 
+- A portable solution to always have the same folder structure availabe and a way to access and manipulate this structure and its content with an interface
+- Structure
+- Archiv: All Versions of the projekt
+- Dokumentation: Project Documentiation, Notes, Changelog, Todo, Overview, 
+- GUI: Visual interface for interaction
+- Sys: Everything else likes Scripts and pictures which will be used for creating the thing. 
+- Usr: Userland - Do what ever you want here. THIS IS A TEMP DIRECTORY. TO KEEP YOUR WORK, SAVE TO folder "Saved" by using the "Save my stuff"-Button. A script will continuously save your work every 15 minutes automatially to Saved/lastsession. Exisiting data will be overwritten! It is a built-in micro backup and worst case tool. If for some reason your actual machine decides to restart or run into an error at least you will not have lost more than the last 15 minutes of work. 
+
+how?
+
+HTML5 and python for the most part. Most plattforms are capable of supporting this. 
+for Full blown Operating system it is intended to use a gnu/linux system. Once you installed the OS of choice, just grab the zip of this project and unpack it to your home. link to the index.html file in the root of the unpacked folder. thats it!
+
+who?
+everybody who wants to stop getting used to new UI every now and then. 
+Everybody who likes to keep things simple. 
+Everybody who likes to have full control about how they interact with their and software. 
+
+Setup?
+Just unzip, open index.html in your browser and name your OS (Linux or Windows for now). The Script will then know where it has to look for executables and call a script, which will create the appz-file. Appzfile contains all links to all executables on the local system (on linux its divided in SU and USER sections)
+Sample:
+<appzfile>
+ <system>Windows
+  <app> "C:\Windows\Explorer.exe"
+   <link> %system%\explorer.exe </link>
+
+	# OPTIONAL: SECTION <appsection>"SECTIONNAME"</appsection>
+
+  <app>
+ </system>
+</appzfile>
+
+something like that. 
+
+Using the same format you can add almost everything you can think of to "theTHING". 
+just place it in your saved folder. use the folder customadditions. this folder is refererenced in the main script to look for preexisting customizations and will add them on next startup to your "theTHING" Interface. 
+To add them manually: quick n dirty solution is to simply add a link to your file. if it has the extension .caf (customadditionfile) it will be integrated as a new folder and a menu entry will be generated. 
+if it has the extension .cmf, it will be added as a folder with multimedia content. 
+if it has the extension .csf it will be added as a customization of the sys folder (CAREFUL! THIS IS THE HEART and BRAIN of "theTHING". Messing with it may result in unexpected results if you dont know what you are doing. Worst case: you will have to start from scratch with a machine that does not even have a partitioned harddrive)
+
+
+perhaps later i would like to see a "rawdatapipeline with a T sync" to stream any kind of data from here to there. 
+app to app, app to port, port to app, sys to sys, network to ... etc.etc.) In unixlike os, thats easy with redirection >> << and cat. 
+on windows its a pain in the... 
+
+
+
+
+
+
+
+once this file is created you have a sorted list of all applications on the local machine. If you are good with this, you are done. 
+
+If you want further customization, you can add sections to the Appzfile, using the APP-SECTION Tag. 
+Insert between the closing tags for link and app. 
+
+
+
+
+- Applications: Editor, calculater, graphics, multimedio, Network, 
+- Saved: All customizations, additions and Content will be stored here. Default save path.
+
+v.0.0.1
+Concept and Idea by SK: structured workflow - plattform independent interface
+starting development today 5.6.2021
